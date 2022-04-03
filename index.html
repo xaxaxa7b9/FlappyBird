@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title> FLappy Bird</title>
+    <meta charset="utf-8">
+    <title>Flappy Bird</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js" charset="utf-8"></script>
-
 </head>
 <body>
-    
+    <audio id="song" controls>
+        <source src="/sounds/flappyBird.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="border-left"></div>
     <div class="game-container">
+        <div class="border-top"></div>
         <div class="sky">
             <div class="bird"></div>
+                <div class="start">
+                    <button type="button" id="startButton">START</button>
+                </div>
         </div>
-        <div class="ground"></div>
     </div>
-
-
+    <div class="ground-container">
+        <div class="ground-moving"></div>
+    </div>
+    <div class="border-right"></div>
 
 </body>
 </html>

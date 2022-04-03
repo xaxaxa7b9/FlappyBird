@@ -1,36 +1,136 @@
-﻿.game-container{
-    width:500px;
+﻿body {
+    display: flex;
+}
+
+.game-container {
+    width: 500px;
     height: 730px;
+    position: absolute;
+    left: 80px;
+}
+
+.border-left {
+    width: 80px;
+    height: 790px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+}
+
+.border-right {
+    width: 80px;
+    height: 790px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+    left: 580px;
+}
+
+.border-top {
+    width: 660px;
+    height: 50px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+    top: -50px;
+}
+
+.sky {
+    background-image: url('fb-game-background.png');
+    width: 500px;
+    height: 580px;
     position: absolute;
 }
 
-.sky{
-    background-color: #008dff;
-    width: 500px;
-    height: 580px;
-    position:absolute;
-}
-
-.ground{
-    background-color: #362300;
+.ground {
+    background-image: url('bottom-background.png');
     width: 500px;
     height: 150px;
     position: absolute;
     top: 580px;
+    z-index: +1;
 }
 
-.bird{
-    background-color: #ffd800;
+.bird {
+    background-image: url('flappy-bird.png');
     position: absolute;
     width: 60px;
-    height: 40px;
+    height: 45px;
+    left: 220px;
+    bottom: 100px;
 }
 
-.obstacle{
-
-    background-color: #157f00;
+.obstacle {
+    background-image: url('flappybird-pipe.png');
     width: 60px;
     height: 300px;
     position: absolute;
+}
 
+.topObstacle {
+    background-image: url('flappybird-pipe.png');
+    transform: rotate(180deg);
+    width: 60px;
+    height: 300px;
+    position: absolute;
+}
+
+@keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+
+    to {
+        background-position: 0%;
+    }
+}
+
+@-webkit-keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+
+    to {
+        background-position: 0%;
+    }
+}
+
+.ground-container {
+    height: 150px;
+    width: 580px;
+    left: 80px;
+    position: absolute;
+}
+
+.ground-moving {
+    position: absolute;
+    top: 580px;
+    height: 150px;
+    background-image: url('bottom-background.png');
+    background-repeat: repeat-x;
+    animation: slideright 100s infinite linear;
+    -webkit-animation: slideright 100s infinite linear;
+    width: 100%;
+    z-index: +1;
+}
+
+
+.start {
+    background-color: #b6ff00;
+    position: absolute;
+    top: 100px;
+    height: 300px;
+    left: 100px;
+    width: 300px;
+    z-index: 100;
+}
+
+#startButton {
+    background-color: #ffffff;
+    position: absolute;
+    top: 125px;
+    height: 50px;
+    left: 100px;
+    width: 100px;
+    z-index: 100;
 }
