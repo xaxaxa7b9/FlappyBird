@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-
+    
     const ground = document.querySelector('.ground-moving')
     const bird = document.querySelector('.bird')
     const game = document.querySelector('.game-container')
@@ -15,15 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let birdBottom = 100
 
 
+    var sound = new Audio("/Users/xaxaxa/source/repos/FlappyBird/sounds/song.mp3")
+    var sound1 = new Audio("/Users/xaxaxa/source/repos/FlappyBird/sounds/gameOver.mp3")
+
+
+  
+      
+
+    
 
     function startGame() {
 
 
-       // document.getElementById('song').play();
+      
         birdBottom -= gravity
         bird.style.bottom = birdBottom + 'px'
         bird.style.left = birdLeft + 'px'
         gravity += acceleration
+        console.log(birdBottom)
       
     }
         let timerGame = setInterval(startGame, 20)
@@ -39,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (birdBottom < 500) birdBottom += 30
         bird.style.bottom = birdBottom + 'px'
         gravity = 1
+        sound.play();
     }
     document.addEventListener('keyup', lift)
 
@@ -87,12 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function gameOver() {
-
+        sound1.play();
+       
+        sound.pause();
+        sound.currentTime = 0;
         clearInterval(timerGame)
         isGameOver = true
         document.removeEventListener('keyup', lift)
         ground.classList.add('ground')
         ground.classList.remove('ground-moving')
+        
     }
 
    
