@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let birdBottom = 100
 
 
-    var sound = new Audio("/Users/xaxaxa/source/repos/FlappyBird/sounds/song.mp3")
-    var sound1 = new Audio("/Users/xaxaxa/source/repos/FlappyBird/sounds/gameOver.mp3")
+    let sound = new Audio("/Users/xaxaxa/source/repos/FlappyBird/sounds/song.mp3")
+    let sound1 = new Audio("/Users/xaxaxa/source/repos/FlappyBird/sounds/gameOver.mp3")
 
 
   
